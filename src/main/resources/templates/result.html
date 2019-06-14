@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--使用thymeleaf只需要将 文件放入目录："classpath:/templates/";  文件的后缀： ".html";-->
+<!--<p th:text="${welcome}">welcome to thymeleaf....</p>以上，先从${welcome}中取值，如果有 则直接显示；如果没有，则在显示welcome to thymeleaf....-->
+    hello world
+    <p id="test" th:id="${welcome}" th:text="${welcome}">afdajkfkj;afhoas;</p>
+<hr/>
+    <table border="1px">
+        <tr>
+            <th>名字</th>
+            <th>品种</th>
+        </tr>
+        <tr th:each="pet:${pets}">
+            <td th:text="${pet.petName}">default</td>
+            <td th:text="${pet.strain}">default</td>
+        </tr>
+    </table>
+</body>
+</html>

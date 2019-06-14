@@ -1,0 +1,36 @@
+#  yml中还可以给类绑定数据，类似于以下这种形式
+#  在赋值中，双引号中的转义符会生效，而单引号和不加引号不会生效
+#  切换环境需要分隔符,然后在主配置中设置，properties的优先级高于yml
+
+#server:
+#  port: 8888
+#spring:
+#  profiles:
+#    active: dev
+
+---
+server:
+  port: 9999
+spring:
+  profiles: dev
+
+student:
+#  uname: asasa #将uname的值通过springEL表达式赋给Student
+#  age: 24
+  name: ${random.value}
+  email: 151754870@qq.com
+  sex: true
+  birthday: 2018/02/13
+  location: {province: 湖北,city: 武汉}
+#    province: 湖北
+#    city: 武汉
+  hobbies:
+    - 足球
+    - 篮球
+#   [足球,篮球]
+  skills:
+    - 编程
+    - 炒股
+#   [编成，炒股]
+  pet: {petName: ww,strain: hsq}
+#  petName的松散写法等价于pet-name,效果是一样的，但此种写法不支持@Value注解形式
