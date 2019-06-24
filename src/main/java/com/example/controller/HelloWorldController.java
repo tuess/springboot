@@ -5,10 +5,12 @@ import com.example.entity.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +21,11 @@ public class HelloWorldController {
 
     @ResponseBody
     @RequestMapping("/helloworld")
-     public Student helloworld(){
+//    使用注解（局部跨域）
+//    @CrossOrigin("http://localhost:8080")
+     public Student helloworld(HttpServletResponse response){
+        // 手动设置响应头允许跨域请求（局部跨域）
+        response.setHeader("Access-Control-Allow-Origin", "*");
         Student student = new Student();
         student.setAge(12);
         student.setName("张山");
