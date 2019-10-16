@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "pet")
 public class Pet {
+
     private String petName; //松散语法等价于pet-name
     private String strain;
 

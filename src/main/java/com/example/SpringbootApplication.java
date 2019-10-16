@@ -1,14 +1,15 @@
 package com.example;
 
+import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ImportResource;
-
-import javax.swing.*;
 
 //springboot的主配置类
 @SpringBootApplication
+//添加对mapper包的扫描（或者在mapper类上加注解@mapper）
+@MapperScan("com.example.mapper")
 //需要加上@ComponentScan注解，或者将SpringbootApplication放到所有包的上层，否则只会扫描SpringbootApplication所在的包及其子包
 //@ComponentScan(basePackages={"com.example.entity"})
 //需要将自己写的配置文件加入spring boot中需要加上@ImportResource注解,但不推荐这样做，而是通过配置类的方式来做
@@ -49,6 +50,11 @@ public class SpringbootApplication {
 //    http://localhost:8080/SbJSP/index.jsp
 
     public static void main(String[] args) {
+//        log4j2测试输出
+        Logger logger = LoggerFactory.getLogger(SpringbootApplication.class);
+        logger.info("sasasasasas");
+        logger.error("sasasasasas");
+        logger.debug("sasasasasas");
         SpringApplication.run(SpringbootApplication.class, args);
     }
 
