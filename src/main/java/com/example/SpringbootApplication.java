@@ -39,7 +39,7 @@ public class SpringbootApplication {
 //		</dependency>
 //    provided：意思是 将项目打包时，不需要将内置的tomcat一起打包。
 //
-//            2.建立基本的web项目所需要的目录结构
+//    2.建立基本的web项目所需要的目录结构
 //    webapps/WEB-INF(需要)
 //    webapps/WEB-INF/web.xml (不需要)
 //    webapps/index.jsp

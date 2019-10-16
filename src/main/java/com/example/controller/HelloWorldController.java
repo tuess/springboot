@@ -2,6 +2,8 @@ package com.example.controller;
 
 import com.example.entity.Pet;
 import com.example.entity.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,9 @@ import java.util.Map;
 @EnableAutoConfiguration
 public class HelloWorldController {
 
+//    配置日志输出
+    private Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
+
     @ResponseBody
     @RequestMapping("/helloworld")
 //    使用注解（局部跨域）
@@ -30,6 +35,7 @@ public class HelloWorldController {
         student.setAge(12);
         student.setName("张山");
         student.setEmail("11212113@qq.com");
+        logger.info("helloworld");
         return student;
     }
 
@@ -42,6 +48,7 @@ public class HelloWorldController {
         pets.add(new Pet("小黑","中华田园犬"));
         map.put("welcome","thymeleaf");
         map.put("pets",pets);
+//        返回result.html
         return "result";
     }
 }
