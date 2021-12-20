@@ -2,7 +2,6 @@ package com.example.controller;
 
 import com.example.entity.Pet;
 import com.example.entity.Student;
-import com.example.mapper.StudentMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,8 +57,9 @@ public class HelloWorldController {
     @ResponseBody
     @RequestMapping("/getAll")
     public List<Pet> getAll(HttpServletResponse response){
-        List<Pet> pets= studentMapper.getAll();
-        System.out.println(pets);
-        return pets;
+//         List<Pet> pets= studentMapper.getAll();
+//         System.out.println(pets);
+//         return pets;
+        return null;
     }
 }
