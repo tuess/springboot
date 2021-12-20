@@ -22,8 +22,8 @@ public class HelloWorldController {
     //    配置日志输出
     private static final Logger logger = LoggerFactory.getLogger(HelloWorldController.class);
 
-    @Autowired
-    StudentMapper studentMapper;
+//     @Autowired
+//     StudentMapper studentMapper;
 
     @ResponseBody
     @RequestMapping("/helloworld")
